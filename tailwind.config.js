@@ -7,5 +7,6 @@ module.exports = {
       'src/views/**/*.vue',
       'src/pages/**/*.vue',
     ]
-  }
+  }, 
+  darkMode: 'class',
 };

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="bgimg bg-gray-100 relative overflow-hidden" style="padding-bottom:56.25%">
+    <div class="bgimg bg-gray-100 relative overflow-hidden" :style="{paddingBottom:`${ratio}%`}">
       <img :src="bgImg(bgSrc)" :alt="bgAlt" class="object-cover w-full h-full absolute"/>  
-      <div class="bg-white pt-8 pr-8 absolute bottom-0 w-2/5">
+      <div class="bg-white dark:bg-gray-800 pt-5 pr-8 absolute bottom-0 max-w-lg">
         <div class="text-4xl font-serif font-bold">
           <slot></slot>
         </div>
@@ -24,6 +24,9 @@ export default class Banner extends Vue {
 
   @Prop({required: true})
   bgAlt!: string;
+
+  @Prop({default: 56.25})
+  ratio!: number
 
   bgImg(AssetImg: string){ 
     if (this.bgSrc){
